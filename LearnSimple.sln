@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenereicCollections", "Coll
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Attributes", "Attributes\Attributes.csproj", "{ED3C3BD2-11F4-4C5A-94DA-D8AF6E102DAC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IOC", "IOC\IOC.csproj", "{BD73F721-51C3-4640-8270-62D04869E726}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inversion of Control", "IOC\Inversion of Control.csproj", "{BD73F721-51C3-4640-8270-62D04869E726}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
