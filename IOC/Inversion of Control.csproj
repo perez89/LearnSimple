@@ -77,8 +77,17 @@
     <Compile Include="Models\DI - Property\CustomerService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Unity Container\Interfaces\IAirplane.cs" />
     <Compile Include="Unity Container\Interfaces\ICar.cs" />
+    <Compile Include="Unity Container\Interfaces\ICarKey.cs" />
+    <Compile Include="Unity Container\Interfaces\IShip.cs" />
+    <Compile Include="Unity Container\Models\Pilot.cs" />
     <Compile Include="Unity Container\Models\Driver.cs" />
+    <Compile Include="Unity Container\Models\DriverK.cs" />
+    <Compile Include="Unity Container\Models\DriverMC.cs" />
+    <Compile Include="Unity Container\Models\DriverP.cs" />
+    <Compile Include="Unity Container\Models\PilotL.cs" />
+    <Compile Include="Unity Container\Models\Sailor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

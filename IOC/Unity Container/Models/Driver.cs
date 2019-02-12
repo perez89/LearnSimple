@@ -39,7 +39,7 @@ namespace IOC.UnityContainera.Models
     }
     public class Driver
     {
-        private ICar _car = null;
+        private ICar _car;
 
         public Driver(ICar car)
         {
