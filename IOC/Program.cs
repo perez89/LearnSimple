@@ -34,7 +34,7 @@ namespace IOC
 
             #region Method Injection
             //MethodInjection();
-            //MethodInjectionRuntimeConfiguration();
+            MethodInjectionRuntimeConfiguration();
             #endregion
 
             #region Overrides
@@ -70,12 +70,10 @@ namespace IOC
        }
 
 
-        static void RegistrationSingleInjection() {    
-
+        static void RegistrationSingleInjection() {   
             var container = new UnityContainer();
 
-            container.RegisterType<ICar, BMW>();
-            
+            container.RegisterType<ICar, BMW>();            
 
             //Resolves dependencies and returns Driver object 
             Driver driver1 = container.Resolve<Driver>();
@@ -237,11 +235,17 @@ namespace IOC
         {
             var container = new UnityContainer();
 
+            container.RegisterType<IShip, Airboat>();
+            IShip Airboat = container.Resolve<IShip>(); 
+            container.RegisterType<Sailor>(new InjectionMethod("UseShip", Airboat));
+
             //run-time configuration
             container.RegisterType<Sailor>(new InjectionMethod("UseShip", new Airboat()));
 
             var sailor = container.Resolve<Sailor>();
             sailor.Sail();
+
+
             //to specify multiple parameters values
             container.RegisterType<Sailor>(new InjectionMethod("UseShipTurbo", new object[] { new Airboat(), true }));
 
@@ -250,16 +254,13 @@ namespace IOC
         }
         #endregion
 
-
+        #region Overrides
         /// <summary>
         ///There are three important classes which inherit ResolverOverride:
         ///ParameterOverride: Used to override constructor parameters.
         ///PropertyOverride: Used to override the value of specified property.
         ///DependencyOverride: Used to override the type of dependency and its value.
         /// </summary>
-
-        #region Overrides
-
         static void ParameterOverride() {
             var container = new UnityContainer()
                 .RegisterType<ICar, BMW>();
@@ -319,7 +320,6 @@ namespace IOC
         }
 
         #endregion
-
 
         #region Lifetime Manager
         /// <summary>
@@ -391,9 +391,6 @@ namespace IOC
         }
 
         #endregion
-
-
-
 
     }
 }
